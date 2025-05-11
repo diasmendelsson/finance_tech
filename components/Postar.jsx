@@ -1,7 +1,7 @@
 'use client'
 
 import postAction from "@/lib/post";
-import { useActionState } from 'react';
+import { useActionState, useState } from 'react';
 
 const initialState = { 
     message:'',
@@ -10,7 +10,28 @@ const initialState = {
 
 export default function Postar(){
 
-    const [state, action, isPending] = useActionState( postAction, initialState )
+
+    const [state, action, isPending] = useActionState( postAction, initialState );
+    const [title, setTitle ] = useState('');
+    const [slug, setSlug ] = useState('');
+
+    const gerarSlug = (texto) =>{
+      return texto
+        .toLowerCase()
+        .normalize('NFD') // Remove acentos
+        .replace(/[\u0300-\u036f]/g, '') // Remove acentos
+        .replace(/\s+/g, '-') // Espaços viram traços
+        .replace(/[^\w\-]+/g, '') // Remove caracteres especiais
+        .replace(/\-\-+/g, '-') // Remove traços duplos
+        .replace(/^-+/, '') // Remove traços no início
+        .replace(/-+$/, ''); // Remove traços no fim
+    }
+
+    const handleTitleChange = (e) => {
+        const novoTitulo = e.target.value;
+        setTitle(novoTitulo);
+        setSlug(gerarSlug(novoTitulo));
+    }
 
     return (
         <section className="mt-4 border min-h-screen flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
@@ -20,7 +41,7 @@ export default function Postar(){
 
                 <div className="w-full border flex flex-col p-4">
                     <label htmlFor="title">Título</label>
-                    <input  className="border" type="text" name="title" required />
+                    <input  className="border" type="text" name="title" required value={title} onChange={handleTitleChange} />
                 </div>
 
                 <div  className="w-full border flex flex-col p-4">
@@ -29,13 +50,20 @@ export default function Postar(){
                 </div>
 
                 <div  className="w-full border flex flex-col p-4">
-                    <label htmlFor="imagebanner1">Imagem Banner 1</label>
-                    <input   className="cursor-pointer px-2 h-6 w-58 border"type="file" name="imagebanner1"/>
+                    <label htmlFor="slug">Slug</label>
+                    <input  className="w-full px-2 h-6 w-58 border"
+                        type="text"
+                        name="slug"
+                        defaultValue={slug}
+                        readOnly
+                
+                    />
                 </div>
 
+
                 <div  className="w-full border flex flex-col p-4">
-                    <label htmlFor="imagebanner2">Imagem Banner 2</label>
-                    <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner2" />
+                    <label htmlFor="imagebanner">Imagem Banner</label>
+                    <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner" />
                 </div>
 
                 <div  className="border flex flex-col p-4">
