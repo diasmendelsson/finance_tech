@@ -38,13 +38,16 @@ export default async function PostPage({ params}) {
           </p>
         </div>
 
-        <Image
-          className="mt-10"
-          src={post.imagebanner}
-          alt="Imagem do post"
-          width={350}
-          height={220}
-        />
+         <div className="px-4 max-w-full sm:max-w-md md:max-w-4xl lg:w-4xl xl:max-w-4xl">
+          <Image
+            className="mt-10"
+            src={post.imagebanner}
+            alt="Imagem do post"
+            width={350}
+            height={220}
+            layout="responsive"
+          />
+        </div>
 
         <div className="px-4 mt-6 space-y-4 overflow-hidden">
           {Array.isArray(post.content) &&

@@ -8,6 +8,10 @@ module.exports = {
     },
   }
 
+  module.exports = {
+  reactStrictMode: true,
+};
+
 
   module.exports = {
   env: {

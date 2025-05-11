@@ -1,13 +1,8 @@
-import Image from "next/image";
-import pool from '@/lib/db';
 import HeroBanner from "@/components/HeroBanner";
 import ListPost from "@/components/ListPost";
 
 
 export default async function Home() {
-
-
-
 
   return (
 

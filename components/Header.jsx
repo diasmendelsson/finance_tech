@@ -14,7 +14,7 @@ export default function Header(){
 
             <div className=""> 
 
-            <Link href='/home' className="flex gap-2">
+            <Link href='/' className="flex gap-2">
                 <h1 className="fill-white drop-shadow-xl/50 text-xl font-bold">Finance Tech</h1>
                 <Image 
                     className="fill-white drop-shadow-xl/50"
