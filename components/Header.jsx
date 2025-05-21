@@ -17,7 +17,7 @@ export default function Header() {
       <Navbar isOpen={isOpen} onClose={handleClose} />
 
       {/* Header principal */}
-      <header className="fill-white drop-shadow-xl/30 flex items-center justify-between h-16 bg-green-600 font-[family-name:var(--font-geist-sans)] text-white px-12 z-50 relative">
+      <header className="fill-white drop-shadow-xl/30 flex items-center justify-between h-16 bg-green-600 font-[family-name:var(--font-geist-sans)] text-white px-6 z-50 relative top-0">
         
         {/* Botão Hamburger */}
         <div className="cursor-pointer z-50">
@@ -25,9 +25,9 @@ export default function Header() {
         </div>
 
         {/* Logo e título */}
-        <div>
+        <div className="min-w-[100px] flex items-center">
           <Link href='/' className="flex gap-2">
-            <h1 className="fill-white drop-shadow-xl/50 text-xl font-bold">Finance Tech</h1>
+            <h1 className="fill-white drop-shadow-xl/50 text-xl font-bold ">Finance Tech</h1>
             <Image
               className="fill-white drop-shadow-xl/50 "
               src='/cifrao.png'

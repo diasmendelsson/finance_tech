@@ -1,20 +1,23 @@
 export default function Sobre() {
   return (
-    <main className="px-14 py-10 font-[family-name:var(--font-geist-sans)]">
-      <section className="mt-8 w-full flex flex-col items-center">
-        <h1  className="mb-6 text-2xl md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Sobre o Finance Tech</h1>
-        <p className="w-2xl space-y-4">
+    <main className=" flex flex-col items-center px-10 py-10 font-[family-name:var(--font-geist-sans)] gap-4 overflow-hidden">
+      <section className="mt-8 flex flex-col items-center overflow-hidden border">
+        <h1  className="text-green-600 mb-6 text-2xl md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Sobre o Finance Tech</h1>
+        <p className="w-xl space-y-4 text-sm">
           O Finance Tech nasceu da vontade de simplificar dois mundos que
           parecem complexos: o das finanças e o da tecnologia. Aqui, você vai
           encontrar conteúdos que te ajudam a entender melhor o dinheiro — como
           ganhar, economizar, investir — ao mesmo tempo em que explora o
           universo digital que está mudando o mundo à nossa volta.
         </p>
+     
       </section>
 
+     
+
       <section  className="mt-8 w-full flex flex-col items-center">
-        <h2  className="mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Quem está por trás</h2>
-        <p className="w-2xl space-y-4">
+        <h2  className="text-green-600  mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Quem está por trás</h2>
+        <p className="w-xl space-y-4 text-base">
           Meu nome é Mendelsson Dias, sou gerente técnico, desenvolvedor em
           formação e alguém que acredita na independência financeira como
           ferramenta de liberdade. Comecei minha jornada trabalhando em um
@@ -26,11 +29,15 @@ export default function Sobre() {
           no dia a dia. Hoje, além de trabalhar, estudo todos os dias para me
           tornar um desenvolvedor fullstack — e o blog é parte desse processo.
         </p>
+
+
       </section>
 
-      <section  className="mt-8 w-full flex flex-col items-center">
-        <h2 className="mt-4 mb-6  text-2xl md:text-3xl lg:text-3xl text-3xl font-bold text-shadow-lg/30" >Por que finanças + tecnologia?</h2>
-        <p className="w-2xl">
+      
+
+      <section  className="mt-8 w-full flex flex-col items-center py-4 ">
+        <h2 className="text-green-600  mt-4 mb-6  text-2xl md:text-3xl lg:text-3xl text-3xl font-bold text-shadow-lg/30" >Por que finanças + tecnologia?</h2>
+        <p className="w-xl space-y-4 text-base">
           Porque os dois assuntos estão mais ligados do que parecem. Saber
           programar me fez entender melhor o mercado de trabalho. Saber lidar
           com o dinheiro me fez entender o valor do meu tempo. E perceber isso
@@ -39,32 +46,28 @@ export default function Sobre() {
           seja pra crescer financeiramente, sair das dívidas, aprender algo novo
           ou até mudar de carreira.
         </p>
+       
       </section>
 
+      
+
       <section  className="mt-8 w-full flex flex-col items-center">
-        <h2 className="mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Minha missão</h2>
-        <p className="w-2xl mb-4 ">
+        <h2 className="text-green-600  mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Minha missão</h2>
+        <p className="w-xl space-y-4 text-base mb-4">
           Quero transformar esse espaço em um lugar acessível, direto e sincero.
           Escrevo como eu gostaria de ler: sem enrolação, com exemplos da vida
           real e sempre aprendendo junto.
         </p>
-        <ul className="w-2xl px-4">
-          <li>• Reflexões sobre dinheiro, trabalho e futuro</li>
-          <li>• Dicas práticas sobre finanças e organização</li>
-          <li>• Conteúdo tech descomplicado</li>
-          <li>• Um pouco da minha jornada como dev</li>
+        <ul className="w-2xl px-4 w-2xl space-y-4 w-xl space-y-4 text-base">
+          <li><span className="text-green-600">•</span> Reflexões sobre dinheiro, trabalho e futuro</li>
+          <li><span className="text-green-600">•</span>  Dicas práticas sobre finanças e organização</li>
+          <li><span className="text-green-600">•</span>  Conteúdo tech descomplicado</li>
+          <li><span className="text-green-600">•</span>  Um pouco da minha jornada como dev</li>
         </ul>
+       
       </section>
 
-      <section  className="mt-8  w-full flex flex-col items-center">
-        <h2 className="mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Vamos conversar?</h2>
-        <p className="text-left w-2xl">
-          Se você se identifica com esse conteúdo, acompanha o blog, compartilha
-          os textos e, se quiser, me chama pra conversar. Estou por aqui
-          testando, errando e construindo — um post por vez. Obrigado por ler
-          até aqui ✨ — Mendelsson Dias
-        </p>
-      </section>
+     
     </main>
   );
 }

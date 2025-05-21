@@ -15,16 +15,24 @@ export default function Navbar({ isOpen, onClose }) {
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 left-0 h-full w-[140px] bg-green-600 text-white z-40
-          transform transition-transform duration-300 ease-in-out
+          absolute top-0 left-0 h-full w-[300px] bg-zinc-600/50 text-white z-40
+          transform delay-160 transition-transform duration-300 ease-in-out
+       
           ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
       >
-        <ul className="mt-20 flex flex-col items-center gap-6">
-          <li><Link href="/" onClick={onClose}>Home</Link></li>
-          <li><Link href="/sobre" onClick={onClose}>Sobre</Link></li>
-          <li><Link href="/contato" onClick={onClose}>Contato</Link></li>
-        </ul>
+        <div className=" flex flex-col items-center pt-10">
+          <ul className="pl-8 mt-20 flex flex-col items-start gap-6 uppercase font-bold bg-black-500/50 w-full">
+            <li className='border-l-3 border-green-600 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Home</Link></li>
+            <li className='border-l-3 border-red-600  px-3 h-7 flex items-center'><Link href="/sobre" onClick={onClose}>Sobre</Link></li>
+            <li className='border-l-3 border-indigo-500 px-3 h-7 flex items-center'><Link href="/contato" onClick={onClose}>Contato</Link></li>
+            <li className='border-l-3 border-green-600 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Agro</Link></li>
+            <li className='border-l-3 border-teal-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Criptomoedas</Link></li>
+            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Inteligência Artificial</Link></li>
+            <li className='border-l-3 border-indigo-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Eletrônicos</Link></li>
+            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Motors</Link></li>
+          </ul>
+        </div>
       </div>
     </>
   );
