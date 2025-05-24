@@ -13,7 +13,7 @@ export default async function ListPost(){
 
             <div className="text-center bg-green-600 w-42 p-2 mb-4"><h2 className="text-white">ÚLTIMAS NOTÍCIAS</h2></div>
 
-            <div className="grid sm:grid-cols md:grid-cols-2 border px-4 ">
+            <div className="grid sm:grid-cols md:grid-cols-2 px-4 ">
 
                 {allPosts.rows.map(post => (
 

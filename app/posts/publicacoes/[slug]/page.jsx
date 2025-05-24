@@ -5,17 +5,41 @@ import pool from '@/lib/db';
 // Gera o título da aba
 export async function generateMetadata({ params}) {
 
-  const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1', [params.slug]);
+
+  const { slug } = await params
+  const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1', [slug]);
   const post = res.rows[0];
 
- 
-
-
+   return {
+    title: post.titulo,
+    description: post.descricao,
+    openGraph: {
+      title: post.titulo,
+      description: post.descricao,
+      url: `https://www.seusite.com/posts/publicacoes/${slug}`,
+      images: [
+        {
+          url: `https://www.seusite.com${post.imagebanner}`, // caminho completo da imagem og
+          width: 1200,
+          height: 630,
+          alt: post.titulo,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.titulo,
+      description: post.descricao,
+      images: [`https://www.seusite.com${post.imagebanner}`],
+    },
+  };
 }
 // Página em si
 export default async function PostPage({ params}) {
 
-  const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1', [params.slug]);
+   
+  const { slug } = await params
+  const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1',[slug]);
   const post = res.rows[0];
 
   const subtituloIndices = [5, 8];
@@ -47,7 +71,7 @@ export default async function PostPage({ params}) {
 
       {/* A imagem já está boa — só adicionar w-full */}
       <Image
-        className="mt-10 w-full rounded-lg"
+        className="mt-10 w-full "
         src={post.imagebanner}
         alt="Imagem do post"
         width={550}
@@ -57,6 +81,7 @@ export default async function PostPage({ params}) {
 
     {/* TEXTO do conteúdo do post */}
     <div className="mt-6 space-y-4">
+      <div>Olá mundo</div>
       {Array.isArray(post.content) &&
         post.content.map((item, index) => (
           <p
@@ -69,9 +94,11 @@ export default async function PostPage({ params}) {
           >
             {item.valor}
           </p>
-        ))}
-    </div>
 
+        ))}
+
+  
+    </div>
   </section>
 </main>
   );

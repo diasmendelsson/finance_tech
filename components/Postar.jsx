@@ -34,24 +34,25 @@ export default function Postar(){
     }
 
     return (
-        <section className="mt-4 border min-h-screen flex flex-col items-center font-[family-name:var(--font-geist-sans)]">
-           <h1>Crie suas publicações</h1>
+        <section className="max-w-screen-md mx-auto px-4 sm:px-6 md:px-8 mb-4 pt-6">
 
-           <form action={action} className="border flex flex-col items-center gap-4 p-4">
+           <h1 className="md:text-4xl font-bold mb-6">Crie suas publicações</h1>
 
-                <div className="w-full border flex flex-col p-4">
+           <form action={action} className=" flex flex-col items-center gap-4 p-4 overflow-hidden">
+
+                <div className="w-full  flex flex-col p-4">
                     <label htmlFor="title">Título</label>
-                    <input  className="border" type="text" name="title" required value={title} onChange={handleTitleChange} />
+                    <input  className="outline-none px-2 border h-8" type="text" name="title" required value={title} onChange={handleTitleChange} />
                 </div>
 
-                <div  className="w-full border flex flex-col p-4">
+                <div  className="w-full flex flex-col p-4">
                     <label htmlFor="description">Descrição</label>
-                    <input className="border" type="text" name="description" required/>
+                    <input  className="border outline-none px-2 h-8" type="text" name="description" required/>
                 </div>
 
-                <div  className="w-full border flex flex-col p-4">
+                <div  className="w-full flex flex-col p-4">
                     <label htmlFor="slug">Slug</label>
-                    <input  className="w-full px-2 h-6 w-58 border"
+                    <input   className="border outline-none px-2 h-8"
                         type="text"
                         name="slug"
                         defaultValue={slug}
@@ -61,14 +62,14 @@ export default function Postar(){
                 </div>
 
 
-                <div  className="w-full border flex flex-col p-4">
+                <div  className="w-full  flex flex-col p-4">
                     <label htmlFor="imagebanner">Imagem Banner</label>
                     <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner" />
                 </div>
 
-                <div  className="border flex flex-col p-4">
+                <div  className="flex flex-col p-4 ">
                     <label htmlFor="content"></label>
-                    <textarea className="p-4 border" name="content" rows={40} cols={80}/>
+                    <textarea  className="border outline-none px-4 pt-4" name="content" rows={40} cols={63}/>
 
 
                 </div>

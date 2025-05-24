@@ -1,23 +1,18 @@
 export default function Sobre() {
   return (
-    <main className=" flex flex-col items-center px-10 py-10 font-[family-name:var(--font-geist-sans)] gap-4 overflow-hidden">
-      <section className="mt-8 flex flex-col items-center overflow-hidden border">
-        <h1  className="text-green-600 mb-6 text-2xl md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Sobre o Finance Tech</h1>
-        <p className="w-xl space-y-4 text-sm">
+    <main className="font-[family-name:var(--font-geist-sans)] mb-2 pt-6">
+      <section className="max-w-screen-md mx-auto px-4 sm:px-6 md:px-8 mb-4 pt-6">
+        <h2  className="text-green-600 mb-6 text-2xl md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Sobre o Finance Tech</h2>
+        <p className="space-y-4  md:text-base text-sm  mb-8">
           O Finance Tech nasceu da vontade de simplificar dois mundos que
           parecem complexos: o das finanças e o da tecnologia. Aqui, você vai
           encontrar conteúdos que te ajudam a entender melhor o dinheiro — como
           ganhar, economizar, investir — ao mesmo tempo em que explora o
           universo digital que está mudando o mundo à nossa volta.
         </p>
-     
-      </section>
 
-     
-
-      <section  className="mt-8 w-full flex flex-col items-center">
-        <h2  className="text-green-600  mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Quem está por trás</h2>
-        <p className="w-xl space-y-4 text-base">
+        <h2  className="text-green-600 mb-6 text-2xl md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Quem está por trás</h2>
+        <p className="space-y-4  md:text-base text-sm  mb-8">
           Meu nome é Mendelsson Dias, sou gerente técnico, desenvolvedor em
           formação e alguém que acredita na independência financeira como
           ferramenta de liberdade. Comecei minha jornada trabalhando em um
@@ -31,13 +26,9 @@ export default function Sobre() {
         </p>
 
 
-      </section>
 
-      
-
-      <section  className="mt-8 w-full flex flex-col items-center py-4 ">
-        <h2 className="text-green-600  mt-4 mb-6  text-2xl md:text-3xl lg:text-3xl text-3xl font-bold text-shadow-lg/30" >Por que finanças + tecnologia?</h2>
-        <p className="w-xl space-y-4 text-base">
+        <h2 className="text-green-600 mb-6  md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30" >Por que finanças + tecnologia?</h2>
+        <p className="space-y-4  md:text-base text-sm mb-8 mb-8">
           Porque os dois assuntos estão mais ligados do que parecem. Saber
           programar me fez entender melhor o mercado de trabalho. Saber lidar
           com o dinheiro me fez entender o valor do meu tempo. E perceber isso
@@ -46,19 +37,14 @@ export default function Sobre() {
           seja pra crescer financeiramente, sair das dívidas, aprender algo novo
           ou até mudar de carreira.
         </p>
-       
-      </section>
 
-      
-
-      <section  className="mt-8 w-full flex flex-col items-center">
-        <h2 className="text-green-600  mt-4 mb-6 text-2xl md:text-3xl lg:text-3xl  font-bold text-3xl font-bold text-shadow-lg/30">Minha missão</h2>
-        <p className="w-xl space-y-4 text-base mb-4">
+        <h2 className="text-green-600 mb-6  md:text-4xl lg:text-5xl  font-bold text-3xl text-shadow-lg/30">Minha missão</h2>
+        <p className="space-y-4 md:text-base text-sm mb-8">
           Quero transformar esse espaço em um lugar acessível, direto e sincero.
           Escrevo como eu gostaria de ler: sem enrolação, com exemplos da vida
           real e sempre aprendendo junto.
         </p>
-        <ul className="w-2xl px-4 w-2xl space-y-4 w-xl space-y-4 text-base">
+        <ul className="px-4 space-y-4 space-y-4 md:text-base text-sm mb-8 mb-8">
           <li><span className="text-green-600">•</span> Reflexões sobre dinheiro, trabalho e futuro</li>
           <li><span className="text-green-600">•</span>  Dicas práticas sobre finanças e organização</li>
           <li><span className="text-green-600">•</span>  Conteúdo tech descomplicado</li>
