@@ -42,9 +42,6 @@ export default async function PostPage({ params}) {
   const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1',[slug]);
   const post = res.rows[0];
 
-  const subtituloIndices = [5, 8];
-
-
   return (
   
     <main className="font-[family-name:var(--font-geist-sans)] mb-2 pt-6">
@@ -71,32 +68,45 @@ export default async function PostPage({ params}) {
 
       {/* A imagem já está boa — só adicionar w-full */}
       <Image
-        className="mt-10 w-full "
+        className="mt-10"
         src={post.imagebanner}
         alt="Imagem do post"
-        width={550}
-        height={100}
+        width={512}
+        height={312}
       />
     </div>
 
     {/* TEXTO do conteúdo do post */}
     <div className="mt-6 space-y-4">
-      <div>Olá mundo</div>
+      
       {Array.isArray(post.content) &&
-        post.content.map((item, index) => (
-          <p
-            className={`${
-              subtituloIndices.includes(index)
-                ? 'text-3xl font-semibold mt-8 mb-4'
-                : 'text-base'
-            }`}
-            key={index}
-          >
-            {item.valor}
-          </p>
+        post.content.map((item, index) => {
+          if (item.type === "h2") {
+            return (
+              <h2 key={index} className="text-2xl font-semibold mt-8 mb-4">
+                {item.content}
+              </h2>
+            );
+          }
 
-        ))}
+          if (item.type === "ul") {
+            const itens = item.content.split("\n").filter(Boolean); // quebra em linhas
+            return (
+              <ul key={index} className="list-disc list-inside pl-4 space-y-1">
+                {itens.map((li, i) => (
+                  <li key={i}>{li}</li>
+                ))}
+              </ul>
+            );
+          }
 
+          // padrão: parágrafo
+          return (
+            <p key={index} className="text-base leading-relaxed">
+              {item.content}
+            </p>
+          );
+        })}
   
     </div>
   </section>

@@ -17,7 +17,7 @@ export default async function ListPost(){
 
                 {allPosts.rows.map(post => (
 
-                    <article className="border-b-2  w-80" key={post.id}>
+                    <article className="border-b-2 mt-8 w-80" key={post.id}>
 
                         <Link href={`/posts/publicacoes/${post.slug}`}>
                         <Image 
