@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'; 
 
 import Image from "next/image";
 import pool from '@/lib/db';
@@ -8,30 +9,14 @@ export async function generateMetadata({ params}) {
 
   const { slug } = await params
   const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1', [slug]);
-  const post = res.rows[0];
+  const postRaw = res.rows[0];
 
-   return {
-    title: post.titulo,
-    description: post.descricao,
-    openGraph: {
-      title: post.titulo,
-      description: post.descricao,
-      url: `https://www.seusite.com/posts/publicacoes/${slug}`,
-      images: [
-        {
-          url: `https://www.seusite.com${post.imagebanner}`, // caminho completo da imagem og
-          width: 1200,
-          height: 630,
-          alt: post.titulo,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.titulo,
-      description: post.descricao,
-      images: [`https://www.seusite.com${post.imagebanner}`],
-    },
+
+  const post = {
+    ...postRaw,
+    createdatFormatted: new Date(postRaw.createdat).toLocaleDateString('pt-BR'),
+    updateatFormatted: new Date(postRaw.updateat).toLocaleDateString('pt-BR'),
+
   };
 }
 // Página em si
@@ -40,7 +25,18 @@ export default async function PostPage({ params}) {
    
   const { slug } = await params
   const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1',[slug]);
-  const post = res.rows[0];
+  const postRaw = res.rows[0];
+
+
+
+  const post = {
+    ...postRaw,
+    createdatFormatted: new Date(postRaw.createdat).toLocaleDateString('pt-BR'),
+    updateatFormatted: new Date(postRaw.updateat).toLocaleDateString('pt-BR'),
+
+  };
+
+ 
 
   return (
   
@@ -59,11 +55,11 @@ export default async function PostPage({ params}) {
       </p>
 
       <p className="text-sm text-gray-400">
-        Criado em {new Date(post.createdat).toLocaleDateString()}
+        Criado em {post.createdatFormatted}
       </p>
 
       <p className="text-sm text-gray-400">
-        Atualizado {new Date(post.updateat).toLocaleDateString()}
+        Atualizado {post.updateatFormatted}
       </p>
 
       {/* A imagem já está boa — só adicionar w-full */}

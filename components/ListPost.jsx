@@ -29,7 +29,7 @@ export default async function ListPost(){
                         <div className="">
                             <h2 className="text-2xl font-semibold mt-2 mb-2">{post.title}</h2>
                             <p className="text-gray-700 line-clamp-3">{post.description}</p>
-                            <p className="text-sm text-gray-400 mt-2 mb-2">{post.createdat.toLocaleDateString()}</p>
+                            <p className="text-sm text-gray-400 mt-2 mb-2">{post.createdat.toLocaleDateString('pt-BR')}</p>
                         </div>
                         </Link>
 

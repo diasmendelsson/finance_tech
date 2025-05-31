@@ -1,6 +1,6 @@
 'use client'
 
-import postAction from "@/lib/post";
+import postAction  from "@/lib/post";
 import { useActionState, useState } from 'react';
 
 const initialState = { 
@@ -29,6 +29,7 @@ export default function Postar(){
     }
 
     const handleTitleChange = (e) => {
+        
         const novoTitulo = e.target.value;
         setTitle(novoTitulo);
         setSlug(gerarSlug(novoTitulo));
@@ -66,7 +67,7 @@ export default function Postar(){
 
                 <div  className="w-full  flex flex-col p-4">
                     <label htmlFor="imagebanner">Imagem Banner</label>
-                    <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner" />
+                    <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner" required />
                 </div>
 
                 <div className="border w-full flex flex-col p-4">
