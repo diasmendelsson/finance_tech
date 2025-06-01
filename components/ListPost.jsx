@@ -13,9 +13,11 @@ export default async function ListPost(){
 
             <div className="text-center bg-green-600 w-42 p-2 mb-4"><h2 className="text-white">ÚLTIMAS NOTÍCIAS</h2></div>
 
-            <div className="grid sm:grid-cols-2 gap-8 ">
+            <div className="grid sm:grid-cols md:grid-cols-2 px-4 ">
+
                 {allPosts.rows.map(post => (
-                    <article className="border-b-2" key={post.id}>
+
+                    <article className="border-b-2 mt-8 w-80" key={post.id}>
 
                         <Link href={`/posts/publicacoes/${post.slug}`}>
                         <Image 
@@ -27,7 +29,7 @@ export default async function ListPost(){
                         <div className="">
                             <h2 className="text-2xl font-semibold mt-2 mb-2">{post.title}</h2>
                             <p className="text-gray-700 line-clamp-3">{post.description}</p>
-                            <p className="text-sm text-gray-400 mt-2 mb-2">{post.createdat.toLocaleDateString()}</p>
+                            <p className="text-sm text-gray-400 mt-2 mb-2">{post.createdat.toLocaleDateString('pt-BR')}</p>
                         </div>
                         </Link>
 

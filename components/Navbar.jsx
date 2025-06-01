@@ -26,11 +26,11 @@ export default function Navbar({ isOpen, onClose }) {
             <li className='border-l-3 border-green-600 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Home</Link></li>
             <li className='border-l-3 border-red-600  px-3 h-7 flex items-center'><Link href="/sobre" onClick={onClose}>Sobre</Link></li>
             <li className='border-l-3 border-indigo-500 px-3 h-7 flex items-center'><Link href="/contato" onClick={onClose}>Contato</Link></li>
-            <li className='border-l-3 border-green-600 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Agro</Link></li>
-            <li className='border-l-3 border-teal-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Criptomoedas</Link></li>
-            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Inteligência Artificial</Link></li>
-            <li className='border-l-3 border-indigo-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Eletrônicos</Link></li>
-            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/" onClick={onClose}>Motors</Link></li>
+            <li className='border-l-3 border-green-600 px-3 h-7 flex items-center'><Link href="/money" onClick={onClose}>Money</Link></li>
+            <li className='border-l-3 border-teal-500 px-3 h-7 flex items-center'><Link href="/criptomoedas" onClick={onClose}>Criptomoedas</Link></li>
+            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/inteligencia" onClick={onClose}>Inteligência Artificial</Link></li>
+            <li className='border-l-3 border-indigo-500 px-3 h-7 flex items-center'><Link href="/eletronicos" onClick={onClose}>Eletrônicos</Link></li>
+            <li className='border-l-3 border-red-500 px-3 h-7 flex items-center'><Link href="/motors" onClick={onClose}>Motors</Link></li>
           </ul>
         </div>
       </div>
