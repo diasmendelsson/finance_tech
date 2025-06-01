@@ -16,6 +16,9 @@ export default function Postar(){
     const [slug, setSlug ] = useState('');
     const [blocos, setBlocos] = useState([]);
 
+    const [tags, setTags] = useState([]);
+    const [input, setInput] = useState('');
+
     const gerarSlug = (texto) =>{
       return texto
         .toLowerCase()
@@ -34,6 +37,22 @@ export default function Postar(){
         setTitle(novoTitulo);
         setSlug(gerarSlug(novoTitulo));
     }
+
+     const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && input.trim()) {
+      e.preventDefault();
+      if (!tags.includes(input.trim())) {
+        setTags([...tags, input.trim()]);
+      }
+      setInput('');
+    }
+    };
+
+    const removeTag = (index) => {
+        setTags(tags.filter((_, i) => i !== index));
+    };
+
+  
 
     return (
         
@@ -68,6 +87,32 @@ export default function Postar(){
                 <div  className="w-full  flex flex-col p-4">
                     <label htmlFor="imagebanner">Imagem Banner</label>
                     <input  className="cursor-pointer px-2 h-6 w-58 border" type="file" name="imagebanner" required />
+                </div>
+
+
+                <div  className="w-full  flex flex-col p-4">
+
+                    <label>Tags:</label>
+                   
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', border: '1px solid #ccc', padding: '8px' }} >
+                        {tags.map((tag, index) => ( 
+                        <span key={index} style={{ background: '#22c55e', padding: '4px 8px', borderRadius: '4px', color:'white', fontWeight:'bold' }}>
+                            {tag}
+                            <button type="button" onClick={() => removeTag(index)} style={{ marginLeft: '4px', cursor: 'pointer', color:'white'}}>x</button>
+                        </span>
+                        ))}
+                        <input
+                        className="border-none outline-none px-2 h-8"
+                        type="text"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        placeholder="Digite e aperte Enter"
+                        />
+                    </div>
+
+                    {/* Campo escondido com as tags separadas por vírgula */}
+                    <input type="hidden" name="tags" value={tags.join(',')} />
                 </div>
 
                 <div className="border w-full flex flex-col p-4">
@@ -152,7 +197,7 @@ export default function Postar(){
                     </p> 
                 )}
 
-                <button className=" w-46 border cursor-pointer" type="submit">Salvar Post</button>
+                <button className="hover:fill-white hover:drop-shadow-xl/30 border-none bg-green-600 hover:bg-green-500 hover:transition duration-200  text-white font-bold h-10 w-46 border cursor-pointer rounded px-4 py-2" type="submit">Salvar Post</button>
 
            </form>
 
