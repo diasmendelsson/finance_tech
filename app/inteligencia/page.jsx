@@ -1,5 +1,5 @@
 import ListPostTags from "@/components/ListPostTags";
 
 export default function Inteligencia(){
-    return  <ListPostTags  tag="dinheiro" />;
+    return  <ListPostTags  tag="inteligencia" />;
 }

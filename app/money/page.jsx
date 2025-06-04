@@ -2,5 +2,5 @@ import ListPostTags from "@/components/ListPostTags";
 
 export default function Money(){
     
-    return  <ListPostTags  tag="dinheiro" />;
+    return  <ListPostTags  tag="money" />;
 }
