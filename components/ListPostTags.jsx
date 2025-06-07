@@ -9,15 +9,15 @@ export default async function ListPostTags({ tag }) {
 
   return (
 
-    <section className="w-full h-screen px-4 py-4">
+    <section className="w-full px-4 py-4">
 
       <div className="text-center bg-green-600 w-46 font-bold p-2 mt-4 mb-4">
         <h2 className="text-white ">Posts sobre {tag}</h2>
       </div>
 
-      <div className="grid sm:grid-cols md:grid-cols-2 px-4">
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
         {posts.map(post => (
-          <article className="border-b-2 mt-8 w-80" key={post.id}>
+          <article className="w-full max-w-94 mx-auto border-b-2 mt-8 w-80" key={post.id}>
             <Link href={`/posts/publicacoes/${post.slug}`}>
               <Image
                 src={post.imagebanner}

@@ -5,7 +5,7 @@ import Link from "next/link";
 export default async function ListPost(){
 
     const allPosts = await pool.query(
-        'SELECT * FROM publicacoes'
+        'SELECT * FROM publicacoes ORDER BY createdat DESC'
       )
 
     return(
@@ -13,11 +13,11 @@ export default async function ListPost(){
 
             <div className="text-center bg-green-600 w-42 p-2 mb-4"><h2 className="text-white">ÚLTIMAS NOTÍCIAS</h2></div>
 
-            <div className="grid sm:grid-cols md:grid-cols-2 px-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 ">
 
                 {allPosts.rows.map(post => (
 
-                    <article className="border-b-2 mt-8 w-80" key={post.id}>
+                    <article className="w-full max-w-94 mx-auto mt-8 border-b-2 mt-8 w-80" key={post.id}>
 
                         <Link href={`/posts/publicacoes/${post.slug}`}>
                         <Image 

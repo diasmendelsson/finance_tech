@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.financetech.online
+
+# Sitemaps
+Sitemap: https://www.financetech.online/sitemap.xml

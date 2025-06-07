@@ -13,7 +13,7 @@ export default function Footer(){
                <a className="text-2xl" href="https://www.linkedin.com/in/mendelsson-dias/" target="_blank">< FaLinkedin /></a>
                <a className="text-2xl" href="https://www.tiktok.com/@diasmendelsson.dev"  target="_blank"> <FaTiktok /></a></div>
             </div>
-             <div><p className="text-sm">© <span className="font-bold">Finance Tech</span> 2025. Todos os direitos reservados.</p></div>
+             <div><p className="text-xs md:text-sm  lg:text-sm">© <span className="font-bold">Finance Tech</span> 2025. Todos os direitos reservados.</p></div>
              <div></div>
         </footer>
     )

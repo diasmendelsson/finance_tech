@@ -22,7 +22,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt">
-      <head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-adsense-account" content="ca-pub-2289974198906686" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2289974198906686"
+         crossorigin="anonymous">
+        </script>
+      </head>
  
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased  `}>
         <Header />
