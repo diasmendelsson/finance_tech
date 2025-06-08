@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic'; 
 
 import Image from "next/image";
 import pool from '@/lib/db';
@@ -11,12 +10,28 @@ export async function generateMetadata({ params}) {
   const res = await pool.query('SELECT * FROM publicacoes WHERE slug = $1', [slug]);
   const postRaw = res.rows[0];
 
-
   const post = {
     ...postRaw,
     createdatFormatted: new Date(postRaw.createdat).toLocaleDateString('pt-BR'),
     updateatFormatted: new Date(postRaw.updateat).toLocaleDateString('pt-BR'),
 
+  };
+
+  return {
+    title: post.title,
+    description: post.excerpt || post.content.slice(0, 150),
+    openGraph: {
+      title: post.title,
+      description: post.excerpt || post.content.slice(0, 150),
+      url: `http://localhost:3000/posts/publicacoes/${post.slug}`,
+      siteName: 'FinanceTech',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt || post.content.slice(0, 150),
+    },
   };
 }
 // Página em si
@@ -35,8 +50,6 @@ export default async function PostPage({ params}) {
     updateatFormatted: new Date(postRaw.updateat).toLocaleDateString('pt-BR'),
 
   };
-
- 
 
   return (
   
