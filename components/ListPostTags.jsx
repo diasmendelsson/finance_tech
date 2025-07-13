@@ -2,17 +2,19 @@ import pool from "@/lib/db";
 import Link from "next/link";
 import Image from "next/image";
 
-export default async function ListPostTags({ tag }) {
+export default async function ListPostTags({ tags }) {
   const { rows: posts } = await pool.query(
-    'SELECT * FROM publicacoes WHERE $1 = ANY (tags)', [tag]
+    'SELECT * FROM publicacoes WHERE $1 = ANY (tags) ORDER BY createdat DESC', [tags] 
   );
+
+  'SELECT * FROM publicacoes ORDER BY createdat DESC'
 
   return (
 
-    <section className="w-full px-4 py-4 h-full">
+    <section className="w-full px-4 py-4 sm:h-screen ">
 
       <div className="text-center bg-green-600 w-46 font-bold p-2 mt-4 mb-4">
-        <h2 className="text-white ">Posts sobre {tag}</h2>
+        <h2 className="text-white ">Posts sobre {tags}</h2>
       </div>
 
       <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
@@ -26,6 +28,7 @@ export default async function ListPostTags({ tag }) {
                 height={350}
               />
               <div>
+             
                 <h2 className="text-2xl font-semibold mt-2 mb-2">{post.title}</h2>
                 <p className="text-gray-700 line-clamp-3">{post.description}</p>
                 <p className="text-sm text-gray-400 mt-2 mb-2">
