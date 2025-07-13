@@ -17,22 +17,27 @@ export async function generateMetadata({ params}) {
 
   };
 
-  return {
+    
+    
+  
+    return {
     title: post.title,
-    description: post.excerpt || post.content.slice(0, 150),
+    description: post.description,
     openGraph: {
       title: post.title,
-      description: post.excerpt || post.content.slice(0, 150),
-      url: `http://localhost:3000/posts/publicacoes/${post.slug}`,
-      siteName: 'FinanceTech',
+      description: post.description,
+      images: post.imagebanner,
+      url: `https://financetech.online/post/${post.slug}`,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt || post.content.slice(0, 150),
+      description: post.description,
+      images: post.imagebanner,
     },
   };
+    
 }
 // Página em si
 export default async function PostPage({ params}) {

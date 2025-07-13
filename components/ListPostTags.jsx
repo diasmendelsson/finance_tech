@@ -9,7 +9,7 @@ export default async function ListPostTags({ tag }) {
 
   return (
 
-    <section className="w-full px-4 py-4">
+    <section className="w-full px-4 py-4 h-full">
 
       <div className="text-center bg-green-600 w-46 font-bold p-2 mt-4 mb-4">
         <h2 className="text-white ">Posts sobre {tag}</h2>
