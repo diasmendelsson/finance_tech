@@ -5,13 +5,13 @@ import Link from "next/link";
 export default async function ListPost(){
 
     const allPosts = await pool.query(
-        'SELECT * FROM publicacoes ORDER BY createdat DESC'
+        'SELECT * FROM publicacoes ORDER BY createdat DESC LIMIT 4'
       )
 
     return(
         <section className="w-full">
 
-            <div className="text-center bg-green-600 w-42 p-2 mb-4"><h2 className="text-white">ÚLTIMAS NOTÍCIAS</h2></div>
+            <div className="text-center  w-42 p-2 mb-4"><h2 className="text-green-600 font-bold">Tecnologia</h2></div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 ">
 

@@ -4,18 +4,13 @@ import Image from "next/image";
 
 export default async function ListPostTags({ tags }) {
   const { rows: posts } = await pool.query(
-    'SELECT * FROM publicacoes WHERE $1 = ANY (tags) ORDER BY createdat DESC', [tags] 
+    'SELECT * FROM publicacoes WHERE $1 = ANY (tags) ORDER BY createdat DESC LIMIT 3', [tags] 
   );
 
-  'SELECT * FROM publicacoes ORDER BY createdat DESC'
 
   return (
 
     <section className="w-full px-4 py-4 sm:h-screen ">
-
-      <div className="text-center bg-green-600 w-46 font-bold p-2 mt-4 mb-4">
-        <h2 className="text-white ">Posts sobre {tags}</h2>
-      </div>
 
       <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
         {posts.map(post => (
