@@ -25,11 +25,11 @@ export default async function Home() {
       </div>
 
 
-      <div className="w-full p-2 mt-14 mb-4"><h2 className="text-green-600 font-bold">Money</h2>
+      <div className="p-2 mt-14 mb-4"><h2 className="text-green-600 font-bold">Money</h2>
       <ListPostTags tags='Money' />
       </div> 
 
-      <div className="w-full p-2 mb-4"><h2 className="text-green-600 font-bold">Eletrônicos</h2>
+      <div className="p-2 mt-14 mb-4"><h2 className="text-green-600 font-bold">Eletrônicos</h2>
       <ListPostTags tags='Eletrônicos' />
       </div> 
     </main>
